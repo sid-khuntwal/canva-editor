@@ -1,38 +1,62 @@
-.App {
-  text-align: center;
+.parent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.canvas-parent{
+    width: 50%;
+    background: #f0efef;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.panel-parent{
+    width: 50%;
+    height: 100vh;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Canvas CSS */
+
+
+.canvas-container canvas {
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.canvas-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Panel css */
+
+.panel-parent .panel-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.panel-parent .panel-container .panel-heading{
+    width: 100%;
+    margin-top: 30px;
+    border: 10px solid blue;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* align-items: center; */
+}
+
+.panel-heading div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.panel-parent .panel-container .panel-content {
+    width: 100%;
+border: 10px solid blue;
 }
