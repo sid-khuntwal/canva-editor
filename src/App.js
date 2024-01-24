@@ -42,8 +42,6 @@ const App = () => {
     img.src = imgUrl;
 
     img.onload = () => {
-      context.clearRect(0, 0, canvas.width, canvas.height);
-
       const targetWidth = canvas.width * 0.6;
       const targetHeight = canvas.height * 0.6;
 
@@ -51,8 +49,6 @@ const App = () => {
       const y = (canvas.height - targetHeight) * 0.075;
 
       context.drawImage(img, x, y, targetWidth, targetHeight);
-      drawButton(context);
-      drawCaption(context);
     };
   };
 
@@ -109,6 +105,8 @@ const App = () => {
     const buttonX = 80;
     const buttonY = canvasRef.current.height - 150;
 
+    context.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+
     context.fillStyle = "pink";
     context.fillRect(buttonX, buttonY, buttonWidth, buttonHeight);
 
@@ -121,6 +119,9 @@ const App = () => {
       buttonX + buttonWidth / 2,
       buttonY + buttonHeight / 2
     );
+
+    drawImage();
+    drawButton(context);
   };
 
   const handleCaptionChange = (event) => {
